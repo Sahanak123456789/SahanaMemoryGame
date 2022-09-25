@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+<style>
+    .cointainer{background-color: palevioletred;border: solid;border-radius: 10px;height: 100vh;}
+.flex-cointainer{flex-wrap: wrap;justify-content: space-around;display: flex;align-items: center;
+background-color: rgb(102, 255, 41);border: solid;}
+.flex-items{background-color: rgb(255, 148, 166);border: solid;}
+.table{background-color: rgb(255, 64, 0);border: solid;border-radius: 10px;}
+img{border-radius: 20px ;}
+.score{border: solid;border-radius: 10px;height: 400px;width: 300px;background-color: indianred;}
+</style>
+</head>
+<body>
+    
+<div class="cointainer flex-cointainer">
+<div class="table flex-items">
+    <table>
+<tr>
+<th><img onclick="memorygame(this.id)" id="imgone" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px" ></th>
+<th><img onclick="memorygame(this.id)" id="imgtwo" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+<th><img onclick="memorygame(this.id)" id="imgthree" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+<tr>
+<th><img onclick="memorygame(this.id)" id="imgfour" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+<th><img onclick="memorygame(this.id)" id="imgfive" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+<th><img onclick="memorygame(this.id)" id="imgsix" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+<tr>
+<th><img onclick="memorygame(this.id)" id="imgseven" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px" ></th>
+<th><img onclick="memorygame(this.id)" id="imgeight" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+<th><img onclick="memorygame(this.id)" id="imgnine" src="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6" height="130px" width="130px"></th>
+</tr>
+</table>
+</div>
+<div class="score flex-cointainer">
+    <div class="flex-item Player1">
+<img src="https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-006-lady-lips.png" width="75px" height="75px">
+   <h2 id="player">0</h2> </div>
+<div class="flex-item Player2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqC8KTDa7x7POlEZE3LZVsojUitNrJnA0DA&usqp=CAU" width="75px" height="75px">
+<h2 id="playertwo">0</h2>
+</div>
+    </div>
+    </div>
+    <script>
+let po=0
+let pt=0
+let mb="https://us.123rf.com/450wm/vectorhome/vectorhome1907/vectorhome190701533/127734823-mystery-box-icon-vector-illustration.jpg?ver=6"
+
+function memorygame(memory){ 
+let image=document.getElementById(memory).src
+if(image==mb){
+let x=Math.random()*100
+ x=Math.floor(x)
+if(x%2==0){               
+pt=pt+1
+document.getElementById("playertwo").innerText=pt
+document.getElementById(memory).src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqC8KTDa7x7POlEZE3LZVsojUitNrJnA0DA&usqp=CAU"
+//if(pt>4){
+  //  location.href="Winnerscreen.html"
+//}
+}
+
+else {po=po+1 
+document.getElementById(memory).src="https://digitalsynopsis.com/wp-content/uploads/2017/02/beautiful-color-gradients-backgrounds-006-lady-lips.png"
+document.getElementById("player").innerText=po
+
+//if(po<4){
+ //   location.href="Loserscreen.html"
+//}
+}
+}
+} 
+   </script>
+</body>
+</html>
